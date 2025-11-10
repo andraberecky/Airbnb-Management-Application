@@ -1,0 +1,73 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.airbnb2.Controller.HelloController">
+
+  <Label text="Airbnb"
+         style="-fx-font-weight: bold; -fx-font-style: italic; -fx-font-size: 30px; -fx-text-fill: #333333;"
+         AnchorPane.leftAnchor="350" AnchorPane.rightAnchor="100" AnchorPane.topAnchor="30" />
+  <Label text="Welcome to Airbnb! The best way to plan your next vacation."
+         style="-fx-font-style: italic;"
+         AnchorPane.leftAnchor="230" AnchorPane.topAnchor="90" />
+  <Label text="Choose your favourite city."
+         style="-fx-font-style: italic;"
+         AnchorPane.leftAnchor="330" AnchorPane.topAnchor="110" />
+
+  <HBox xmlns="http://javafx.com/javafx/8" spacing="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10">
+    <TextField fx:id="firstNameField" promptText="Enter first name" />
+    <TextField fx:id="lastNameField" promptText="Enter last name" />
+    <Button text="Log In" onAction="#onLoginButtonClick" />
+  </HBox>
+
+  <HBox spacing="10" alignment="CENTER" AnchorPane.leftAnchor="110" AnchorPane.rightAnchor="100" AnchorPane.topAnchor="150">
+    <TextField fx:id="searchBar" promptText="Enter city" />
+    <Button text="Search" onAction="#onSearchButtonClick" />
+  </HBox>
+
+
+  <VBox spacing="15" alignment="CENTER_LEFT" AnchorPane.leftAnchor="20" AnchorPane.topAnchor="80">
+    <Label text="Choose what do you want to see:" style="-fx-font-style: italic; -fx-text-fill: #ae2828;"/>
+    <MenuBar>
+      <Menu text="View">
+        <MenuItem text="Hosts" onAction="#onHostsButtonClick"/>
+        <MenuItem text="Guests" onAction="#onGuestsButtonClick"/>
+        <MenuItem text="View All" onAction="#onViewAllClick"/>
+      </Menu>
+    </MenuBar>
+    <Button fx:id="addGuestButton" text="Add Guest" style="-fx-font-size: 11px; -fx-padding: 12 20; -fx-background-color: #f46969; -fx-text-fill: white; -fx-font-weight: bold;" onAction="#onAddGuestsButtonClick" />
+    <Button fx:id="addHostButton" text="Add Host" style="-fx-font-size: 11px; -fx-padding: 12 20; -fx-background-color: #f46969; -fx-text-fill: white; -fx-font-weight: bold;" onAction="#onAddHostButtonClick" />
+    <Label text="Press here for an example:" style="-fx-font-style: italic; -fx-text-fill: #ae2828;"/>
+    <Button text="Example-host" style="-fx-font-size: 11px; -fx-padding: 12 20; -fx-background-color: #f46969; -fx-text-fill: #ffffff; -fx-font-weight: bold;" onAction="#onHostsButtonClick2"/>
+    <Button text="Example-guest" style="-fx-font-size: 11px; -fx-padding: 12 20; -fx-background-color: #f46969; -fx-text-fill: white; -fx-font-weight: bold;" onAction="#onGuestsButtonClick2"/>
+    <Label fx:id="fullNameLabel" text="The example will appear here." style="-fx-font-style: italic;-fx-text-fill: #ae2828;"/>
+
+  </VBox>
+
+  <VBox fx:id="rightVBox" spacing="15" alignment="CENTER_RIGHT" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="80">
+    <Button text="Properties" style="-fx-font-size: 11px; -fx-padding: 12 20; -fx-background-color: #f46969; -fx-text-fill: white; -fx-font-weight: bold;" onAction="#onPropertiesButtonClick" />
+    <Button text="Bookings" style="-fx-font-size: 11px; -fx-padding: 12 20; -fx-background-color: #f46969; -fx-text-fill: white; -fx-font-weight: bold;" onAction="#onBookingsButtonClick" />
+    <Button text="Reviews" style="-fx-font-size: 11px; -fx-padding: 12 20; -fx-background-color: #f46969; -fx-text-fill: white; -fx-font-weight: bold;" onAction="#onReviewsButtonClick" />
+    <Button text="Complaints" style="-fx-font-size: 11px; -fx-padding: 12 20; -fx-background-color: #f46969; -fx-text-fill: white; -fx-font-weight: bold;" onAction="#onComplaintsButtonClick" />
+
+  </VBox>
+
+  <ImageView fx:id="imageView" fitHeight="350.0" fitWidth="400.0" layoutX="200.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true" />
+
+  <ScrollPane fx:id="personsScrollPane" layoutX="20" layoutY="500" prefWidth="750" prefHeight="200" hbarPolicy="NEVER" vbarPolicy="ALWAYS">
+    <VBox fx:id="personsListVBox" spacing="10" alignment="TOP_LEFT" style="-fx-padding: 10;">
+    </VBox>
+
+  </ScrollPane>
+
+
+</AnchorPane>
+
+
