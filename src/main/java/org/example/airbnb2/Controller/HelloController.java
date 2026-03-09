@@ -31,7 +31,7 @@ public class HelloController {
 
     private final String DB_URL = "jdbc:postgresql://localhost:5432/Airbnb";
     private final String DB_USER = "postgres";
-    private final String DB_PASSWORD = "andrastefi04";
+    private final String DB_PASSWORD = "";
 
     @FXML
     protected void onHostsButtonClick() {
